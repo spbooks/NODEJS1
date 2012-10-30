@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nockmarket</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+  <link href="/stylesheets/nockmarket.css" rel="stylesheet">
+  <script src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+  <script type="text/javascript" src="http://spbooks.github.com/nodejs1/jquery.js"></script>
+  <script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-button.js"></script>
+  <script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="http://spbooks.github.com/nodejs1/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+  <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  <script src="http://backbonejs.org/backbone-min.js"></script>
+  <script type="text/javascript" src="/js/portfolio.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="/js/trades.js"></script>
+  <script src="/js/account.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="offset2 span8">
+        <h3>Welcome to the Nockmarket</h3>
+        <p>Here you can manage your portfolio and view live prices.</p>
+        <div class="tabbable" style="margin-bottom: 18px;">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Portfolio</a></li>
+            <li><a href="#tab2" data-toggle="tab">Nockmarket</a></li>
+            <li><a href="#tab3" data-toggle="tab" id="chat-tab">Chat</a></li>
+            <li><a href="#tab4" data-toggle="tab">My Account</a></li>
+          </ul>
+          <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+            <div class="tab-pane active" id="tab1">
+              <div class="well form-search">
+                <input id="stock" type="text" class="input-medium search-query" name="stock">
+                <button id="add-stock" class="btn">Add Stock</button><hr />
+                <input id="filter" type="text" class="input-medium search-query" name="filter">
+                <button class="add-filter btn">Filter</button>
+              </div>
+              <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                  <tr>
+                    <th>Stock Code</th>
+                    <th>Last Price</th>
+                  </tr>
+                </thead>
+                <tbody class="stock-list">
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <table class="table table-bordered table-condensed">
+                <thead>
+                  <tr>
+                    <th>Stock</th>
+                    <th>BID5</th>
+                    <th>BID4</th>
+                    <th>BID3</th>
+                    <th>BID2</th>
+                    <th>BID1</th>
+                    <th>Trade</th>
+                    <th>ASK1</th>
+                    <th>ASK2</th>
+                    <th>ASK3</th>
+                    <th>ASK4</th>
+                    <th>ASK5</th>
+                  </tr>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody class="stock-data">
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="tab3">
+              <p><button class="btn btn-info btn-large btn-primary" type="button" id="join-chat">Join Chat</button></p>
+              <p><textarea class="input-xlarge span8 chat-widget" id="textarea" rows="20"></textarea></p>
+              <p><input type="text" class="input-xlarge span8 chat-widget" id="input01" placeholder="Enter your message"></p>
+              <p><button type="submit" class="btn btn-primary chat-widget" id="send-chat">Send</button></p>
+              <p><span class="label label-inverse chat-widget" id="online">Online:</span><div id="users"></div></p>
+              <div class="tab-pane" id="tab4">
+                <p><input type="text" class="input-xlarge span8" id="email" value="<%=email%>"></p>
+                <p><button type="submit" class="btn btn-primary" id="update-account">Update</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
