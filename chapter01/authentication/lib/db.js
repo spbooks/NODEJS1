@@ -7,7 +7,7 @@ module.exports.Schema = Schema;
 // Connect to cloud database
 var username = "user";
 var password = "password";
-var address = ' @dbh42.mongolab.com:27427/nockmarket';
+var address = '@dbh42.mongolab.com:27427/nockmarket';
 connect();
 
 // Connect to mongo
